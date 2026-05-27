@@ -1,21 +1,26 @@
-import ShelterList from './components/lists/ShelterList'
-import Sidebar from './components/Sidebar';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import shelterdata from './data/shelterData'
+import BasicLayout from './layouts/BasicLayout'
+import Missing from './pages/missing/Missing'
+import Shelter from './pages/Shelter/Shelter'
+
+
+const router = createBrowserRouter([
+  {
+   path: '/',
+   element: <BasicLayout/>,
+   children: [
+      { index:true, element: <Missing /> },
+      { path: '/shelter', element: <Shelter /> }, 
+   ]
+  }
+])
 
 
 function App() {
 
-  return (
-    <div className='layout'>
-      <aside className="bar">
-        <Sidebar/>
-      </aside>
-
-      <section className='list'>
-        <ShelterList list={shelterdata}/> 
-      </section>
-    </div>
+  return ( 
+    <RouterProvider router={router} />
   ); 
 }
 

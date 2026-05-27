@@ -1,0 +1,11 @@
+.missing-list
+{
+ /*height: 100%;*/
+ display: flex;
+ flex-direction: row;
+ flex-wrap: nowrap;
+ overflow-x: auto;
+ gap: 12px;
+ padding: 15px;
+ background-color: var(--main-color);
+}

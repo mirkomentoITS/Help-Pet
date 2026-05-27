@@ -1,5 +1,7 @@
 import { useRef } from 'react';
-import Missing from '../cards/MissingCard'
+
+import Missing from '../../cards/missingcard/MissingCard'
+import styles from './MissingList.module.css'
 
 
 function MissingList ({ list }) {
@@ -12,7 +14,7 @@ function MissingList ({ list }) {
   };
 
   return (
-    <div className='missing-list' ref={listRef} onWheel={handleWheel}>
+    <div className={styles['missing-list']} ref={listRef} onWheel={handleWheel}>
       {list.map((animal) => (
         <Missing key={animal.nome} animal={animal} />
       ))}

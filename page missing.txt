@@ -94,7 +94,7 @@ export default App
 {
  /*height: 100%;*/
  display: flex;
-  flex-direction: row;
+ flex-direction: row;
  flex-wrap: nowrap;
  overflow-x: auto;
  gap: 12px;
@@ -103,131 +103,11 @@ export default App
 }
 
 
-.missing-card 
-{
- height: 340px;
- width: 220px;
- display: flex;
- flex: 0 0 220px;
- flex-direction: column;
- padding: 10px;
- background: white;
- border-radius: 15px;
- box-shadow: 0px 3px 10px -2px rgba(0,0,0,0.6);
- transition: transform 0.35s ease;
-}
-
-
-.missing-card:hover 
-{
- transform: scale(1.02);
-}
-
-
-.missing-front,
-.missing-back 
-{
- display: flex;
- flex-direction: column;
-}
-
-
-.missing-front .missing-img 
-{
- width: 100%;
- height: 150px;
- max-height: 45%;
- object-fit: cover;
- object-position: top;
- border-radius: 6px;
- margin-bottom: 10px;
-}
-
-
-.missing-front .missing-name 
-{
- margin: 1px;
- text-align: center;
- font-family: Arial;
-}
-
-
-.missing-front .missing-type
-{
- margin-top: 5px;
- margin-bottom: 2px;
-}
-
-
-.missing-front .missing-age
-{
- margin-top: 2px;
- margin-bottom: 7px;
-}
-
-
-.missing-front .missing-desc
-{
- margin-top: 2px;
- margin-bottom: 2px;
- color: #424242;
- font-size: 1rem;
-}
-
-
-.missing-card .missing-dettagli
-{
- width: 150px;
- height: 33px;
-
- margin-top: 12px;
- align-self: center;
- text-align: center;
-
- color: rgb(255, 98, 0);
- font-weight: bold;
- background-color:  rgb(254, 182, 115, 0.2);
- border: 2px solid rgb(255, 98, 0);
- border-radius: 15px;
-
- transition: all 0.2s;
-}
-
-
-.missing-card .missing-dettagli:hover
-{
- background-color: var(--secondary-hover-color);
- cursor: pointer;
-}
-
-
-.missing-back .missing-pos,
-.missing-back .missing-num,
-.missing-back .missing-data
-{
- margin-top: 3px;
- margin-bottom: 3px;
-}
-
-
 
 
 /*=== MAPPA ===*/
 
-.map-wrapper
-{
- height: 100%;   
- padding: 15px 15px 0px 15px;
- background-color: var(--main-color);
-}
 
-.map-wrapper .leaflet-container 
-{
- height: 100%;
- width: 100%;
- border-radius: 15px;
- box-shadow: 0px 3px 10px -2px rgba(0,0,0,0.6);
-}
 
 
 

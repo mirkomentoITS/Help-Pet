@@ -1,12 +1,14 @@
 import { MapContainer, TileLayer, Marker, Popup} from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
+import styles from '../mapview/MapView.module.css'
 
 
 export default function MapView({ pos }) {
 
   return (
-    <div className='map-wrapper'>
+    <div className={styles['map-wrapper']}>
       <MapContainer
+        className={styles['map']}
         center={[44.938, 7.675]}
         zoom={13}
         scrollWheelZoom={false}
