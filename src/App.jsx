@@ -1,8 +1,7 @@
-import MissingList from './components/lists/MissingList'
-import MapView from './components/MapView'
+import ShelterList from './components/lists/ShelterList'
 import Sidebar from './components/Sidebar';
 
-import missingData from './data/missingData'
+import shelterdata from './data/shelterData'
 
 
 function App() {
@@ -13,12 +12,8 @@ function App() {
         <Sidebar/>
       </aside>
 
-      <section className='map'>
-        <MapView pos={missingData}/> 
-      </section>
-      
       <section className='list'>
-        <MissingList list={missingData}/>
+        <ShelterList list={shelterdata}/> 
       </section>
     </div>
   ); 

@@ -1,4 +1,5 @@
 /*=== DESIGN SYSTEM ===*/
+
 :root 
 {
 --main-color: rgb(255, 180, 112);
@@ -17,9 +18,8 @@
  height: calc(100vh - 10px);
  display: grid;  
  grid-template-columns: min-content 1fr;
- grid-template-rows: 1fr 370px;
- grid-template-areas: 
- 'bar map' 
+ grid-template-rows: 1fr;
+ grid-template-areas:  
  'bar list';
 }
 
@@ -27,13 +27,6 @@
 .bar 
 {
  grid-area: bar;
- min-height: 0;
-}
-
-
-.map 
-{
- grid-area: map;
  min-height: 0;
 }
 
@@ -102,8 +95,8 @@
  justify-content: start;
  gap: 12px;
  padding: 7px 7px;
- border-radius: 10px;  
  font-family: 'Roboto', sans-serif;
+ border-radius: 10px;  
 }
 
 
@@ -181,28 +174,45 @@
 
 
 
-/*=== LISTA ANIMALI ===*/
+/*=== LISTA SHELTER ===*/
 
-.missing-list
+.shelter-list
 {
+ height: 100%;
  display: flex;
- flex-wrap: nowrap;
  flex-direction: row;
- overflow-x: auto;
+ flex-wrap: wrap;
+ overflow-y: auto;
  gap: 12px;
- padding: 15px 15px 15px 15px;
+ padding: 15px;
  background-color: var(--main-color);
 }
 
 
-.missing-card 
+.shelter-list::-webkit-scrollbar 
 {
- height: 340px;
- width: 220px;
- display: flex;
- flex: 0 0 220px;
- flex-direction: column;
+ display: none;
+}
+
+
+.shelter-card 
+{
+ height: 200px;
+ width: 100%;
+ flex: 0 0 580px;
+
+ display: grid;
+ 
+ grid-template-columns: 200px 150px 180px;
+ grid-template-rows: 1fr 40px 40px;
+ grid-template-areas:  
+ 'photo id distance'
+ 'photo name address'
+ 'photo city num';
+ 
+ gap: 4px 10px;
  padding: 10px;
+
  background: white;
  border-radius: 15px;
  box-shadow: 0px 3px 10px -2px rgba(0,0,0,0.6);
@@ -210,113 +220,78 @@
 }
 
 
-.missing-card:hover 
+.shelter-card:hover 
 {
  transform: scale(1.02);
 }
 
 
-.missing-front,
-.missing-back 
+.shelter-img 
 {
- display: flex;
- flex-direction: column;
-}
-
-
-.missing-front .missing-img 
-{
- width: 100%;
- height: 150px;
- max-height: 45%;
- object-fit: cover;
- object-position: top;
- border-radius: 6px;
- margin-bottom: 10px;
-}
-
-
-.missing-front .missing-name 
-{
- margin: 1px;
- text-align: center;
- font-family: Arial;
-}
-
-
-.missing-front .missing-type
-{
- margin-top: 5px;
- margin-bottom: 2px;
-}
-
-
-.missing-front .missing-age
-{
- margin-top: 2px;
- margin-bottom: 7px;
-}
-
-
-.missing-front .missing-desc
-{
- margin-top: 2px;
- margin-bottom: 2px;
- color: #424242;
- font-size: 1rem;
-}
-
-
-.missing-card .missing-dettagli
-{
- width: 150px;
- height: 33px;
-
- margin-top: 12px;
- align-self: center;
- text-align: center;
-
- color: rgb(255, 98, 0);
- font-weight: bold;
- background-color:  rgb(254, 182, 115, 0.2);
- border: 2px solid rgb(255, 98, 0);
- border-radius: 15px;
-
- transition: all 0.2s;
-}
-
-
-.missing-card .missing-dettagli:hover
-{
- background-color: var(--secondary-hover-color);
- cursor: pointer;
-}
-
-
-.missing-back .missing-pos,
-.missing-back .missing-num,
-.missing-back .missing-data
-{
- margin-top: 3px;
- margin-bottom: 3px;
-}
-
-
-
-
-/*=== MAPPA ===*/
-
-.map-wrapper
-{
- height: 100%;   
- padding: 15px 15px 0px 15px;
- background-color: var(--main-color);
-}
-
-.map-wrapper .leaflet-container 
-{
+ width: 200px;
  height: 100%;
- width: 100%;
+ grid-area: photo;
+ object-fit: cover;
+ border-radius: 6px;
+}
+
+
+.shelter-id 
+{
+ grid-area: id;
+ padding-left: 5px;
+ font-size: 22px;
+ font-weight: 600;
+ font-family: 'Roboto', sans-serif;
+}
+
+
+.shelter-distance 
+{ 
+ width: 100px;
+ height: 35px;
+ grid-area: distance;
+ justify-self: end;
+ text-align: center;
+ line-height: 30px;
+ font-family: 'Roboto', sans-serif;
+ font-weight: bold;
+ background-color:  rgba(250, 213, 6, 0.5);
+ border: 3px solid black;
  border-radius: 15px;
- box-shadow: 0px 3px 10px -2px rgba(0,0,0,0.6);
+}
+
+
+.shelter-name
+{
+ grid-area: name;
+ margin: 0px;
+ padding-left: 5px;
+ font-size: 20px;
+}
+
+
+
+.shelter-city     
+{ 
+ grid-area: city;
+ margin: 0px; 
+ padding-left: 5px;
+ font-size: 20px;
+}
+
+
+.shelter-address  
+{ 
+ grid-area: address;
+ margin: 0px;
+ font-size: 20px;
+}
+
+
+.shelter-num      
+{ 
+ grid-area: num;
+ margin: 0px;
+ font-size: 20px;
 }

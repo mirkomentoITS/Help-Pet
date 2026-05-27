@@ -1,11 +1,13 @@
-//import { useState } from "react"
+import Shelter from '../cards/ShelterCard'
 
 
-function ShelterList () {
+function ShelterList ({ list }) {
 
   return (
-    <div>
-
+    <div className='shelter-list'>
+      {list.map((shelter) => (
+        <Shelter key={shelter.id} shelter={shelter} />
+      ))}
     </div>
   )
 }
