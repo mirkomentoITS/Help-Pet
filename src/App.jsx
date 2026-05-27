@@ -10,7 +10,7 @@ function App() {
   return (
     <div className='layout'>
       <aside className="bar">
-        <Sidebar />
+        <Sidebar/>
       </aside>
 
       <section className='map'>

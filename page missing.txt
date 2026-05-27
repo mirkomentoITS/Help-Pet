@@ -1,4 +1,43 @@
-/*=== DESIGN SYSTEM ===*/
+import MissingList from './components/lists/MissingList'
+import MapView from './components/MapView'
+import Sidebar from './components/Sidebar';
+
+import missingData from './data/missingData'
+
+
+function App() {
+
+  return (
+    <div className='layout'>
+      <aside className="bar">
+        <Sidebar />
+      </aside>
+
+      <section className='map'>
+        <MapView pos={missingData}/> 
+      </section>
+      
+      <section className='list'>
+        <MissingList list={missingData}/>
+      </section>
+    </div>
+  ); 
+}
+
+export default App
+
+
+
+
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+
+
+
+
+/* === DESIGN SYSTEM === */
 :root 
 {
 --main-color: rgb(255, 180, 112);
@@ -48,143 +87,11 @@
 
 
 
-/*=== SIDEBAR ===*/
-
-.sidebar 
-{
- height: 100%;
- width: 250px;
- display: flex;
- flex-direction: column;
- gap: 30px;
- padding: 15px;
- background-color: var(--secondary-color);
-}
-
-
-.sidebar .title
-{
- display: flex; 
- flex-direction: row; 
- align-items: center;
- gap: 8px;
-}
-
-
-.title .logo
-{
- width: 45px;
- height: 45px;
- object-fit: contain;   
-}
-
-
-.title .text
-{
- margin: 0px; 
- font-family: 'Roboto', sans-serif;  
-}
-
-
-.sidebar .menu 
-{
- display: flex;
- flex-direction: column;
- gap: 5px;
-}
-
-
-.menu .item
-{
- display: flex;
- flex-direction: row;
- align-items: center;
- justify-content: start;
- gap: 12px;
- padding: 7px 7px;
- border-radius: 10px;  
- font-family: 'Roboto', sans-serif;
-}
-
-
-.menu .item:hover
-{
- background-color: var(--primary-hover-color);
- cursor: pointer;
-}
-
-
-.sidebar .profile
-{
- display: flex;
- flex-direction: row;
- align-items: center;
- margin-top: auto;
- gap: 15px;
- border-radius: 10px;  
-}
-
-.sidebar .profile:hover
-{
- background-color: var(--primary-hover-color);
- cursor: pointer;
-}
-
-
-.profile .image
-{
- width: 45px;
- height: 45px;
- margin-left: 3px;
- object-fit: contain;   
-}
-
-
-.profile .user
-{
- display: flex;
- flex-direction: column;
- justify-content: space-between;
- gap: 3px;
- font-family: 'Roboto', sans-serif;
-}
-
-
-.profile .user p
-{
- padding: 0px;
- margin: 0px;
-}
-
-.user .name
-{
- font-weight: 700;
- font-size: 15px;
-}
-
-.user .action
-{
- color: #424242;   
- font-weight: 400;
- font-size: 12px;
-}
-
-.profile .icon
-{
- margin-left: auto;
- margin-right: 10px;
- width: 25px;
- height: 25px;
- object-fit: contain; 
-}
-
-
-
-
 /*=== LISTA ANIMALI ===*/
 
 .missing-list
 {
+ /*height: 100%;*/
  display: flex;
  flex-wrap: nowrap;
  flex-direction: row;
@@ -319,4 +226,137 @@
  width: 100%;
  border-radius: 15px;
  box-shadow: 0px 3px 10px -2px rgba(0,0,0,0.6);
+}
+
+
+
+
+/*=== SIDEBAR ===*/
+
+.sidebar 
+{
+ height: 100%;
+ width: 250px;
+ display: flex;
+ flex-direction: column;
+ gap: 30px;
+ padding: 15px;
+ background-color: var(--secondary-color);
+}
+
+
+.sidebar .title
+{
+ display: flex; 
+ flex-direction: row; 
+ align-items: center;
+ gap: 8px;
+}
+
+
+.title .logo
+{
+ width: 45px;
+ height: 45px;
+ object-fit: contain;   
+}
+
+
+.title .text
+{
+ margin: 0px; 
+ font-family: 'Roboto', sans-serif;  
+}
+
+
+.sidebar .menu 
+{
+ display: flex;
+ flex-direction: column;
+ gap: 5px;
+}
+
+
+.menu .item
+{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: start;
+ gap: 12px;
+ padding: 7px 7px;
+ border-radius: 10px;  
+ font-family: 'Roboto', sans-serif;
+}
+
+
+.menu .item:hover
+{
+ background-color: var(--primary-hover-color);
+ cursor: pointer;
+}
+
+
+.sidebar .profile
+{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ margin-top: auto;
+ gap: 15px;
+ border-radius: 10px;  
+}
+
+.sidebar .profile:hover
+{
+ background-color: var(--primary-hover-color);
+ cursor: pointer;
+}
+
+
+.profile .image
+{
+ width: 45px;
+ height: 45px;
+ margin-left: 3px;
+ object-fit: contain;   
+}
+
+
+.profile .user
+{
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ gap: 3px;
+ font-family: 'Roboto', sans-serif;
+}
+
+
+.profile .user p
+{
+ padding: 0px;
+ margin: 0px;
+}
+
+.user .name
+{
+ font-weight: 700;
+ font-size: 15px;
+}
+
+.user .action
+{
+ color: #424242;   
+ font-weight: 400;
+ font-size: 12px;
+}
+
+.profile .icon
+{
+ margin-left: auto;
+ margin-right: 10px;
+ width: 25px;
+ height: 25px;
+ object-fit: contain; 
 }
