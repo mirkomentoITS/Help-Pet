@@ -1,0 +1,344 @@
+/* === DESIGN SYSTEM === */
+:root 
+{
+--main-color: rgb(255, 180, 112);
+--secondary-color: rgb(255, 196, 141);
+--primary-hover-color: rgb(240, 175, 114);
+--secondary-hover-color: rgb(254, 182, 115, 0.7);
+}
+
+
+
+
+/*=== RESET includi in modo diverso ===*/
+
+* 
+{
+ box-sizing: border-box;
+}
+
+html, body 
+{
+ height: 100%;
+ margin: 0;
+ padding: 0;
+}
+
+body
+{
+ padding: 5px;
+}
+
+
+
+
+/*=== LAYOUT PAGINA ===*/
+
+.layout
+{
+ height: calc(100vh - 10px);
+ display: grid;  
+ grid-template-columns: min-content 1fr;
+ grid-template-rows: 2fr 1fr;
+ grid-template-areas: 
+ 'bar map' 
+ 'bar list';
+}
+
+
+.bar 
+{
+ grid-area: bar;
+ min-height: 0;
+}
+
+
+.map 
+{
+ grid-area: map;
+ min-height: 0;
+}
+
+
+.list 
+{
+ grid-area: list;
+ min-height: 0;
+ overflow: hidden;
+}
+
+
+
+
+/*=== LISTA ANIMALI ===*/
+
+.missing-list
+{
+ /*height: 100%;*/
+ display: flex;
+ flex-wrap: nowrap;
+ flex-direction: row;
+ overflow-x: auto;
+ gap: 12px;
+ padding: 15px 15px 15px 15px;
+ background-color: var(--main-color);
+}
+
+
+.missing-card 
+{
+ height: 340;
+ width: 220px;
+ display: flex;
+ flex: 0 0 220px;
+ flex-direction: column;
+ padding: 10px;
+ background: white;
+ border-radius: 15px;
+ box-shadow: 0px 3px 10px -2px rgba(0,0,0,0.6);
+ transition: transform 0.35s ease;
+}
+
+
+.missing-card:hover 
+{
+ transform: scale(1.02);
+}
+
+
+.missing-front,
+.missing-back 
+{
+ display: flex;
+ flex-direction: column;
+}
+
+
+.missing-front .missing-img 
+{
+ width: 100%;
+ height: 150px;
+ max-height: 45%;
+ object-fit: cover;
+ object-position: top;
+ border-radius: 6px;
+ margin-bottom: 10px;
+}
+
+
+.missing-front .missing-name 
+{
+ margin: 1px;
+ text-align: center;
+ font-family: Arial;
+}
+
+
+.missing-front .missing-type
+{
+ margin-top: 5px;
+ margin-bottom: 2px;
+}
+
+
+.missing-front .missing-age
+{
+ margin-top: 2px;
+ margin-bottom: 7px;
+}
+
+
+.missing-front .missing-desc
+{
+ margin-top: 2px;
+ margin-bottom: 2px;
+ color: #424242;
+ font-size: 1rem;
+}
+
+
+.missing-card .missing-dettagli
+{
+ width: 150px;
+ height: 33px;
+
+ margin-top: 12px;
+ align-self: center;
+ text-align: center;
+
+ color: rgb(255, 98, 0);
+ font-weight: bold;
+ background-color:  rgb(254, 182, 115, 0.2);
+ border: 2px solid rgb(255, 98, 0);
+ border-radius: 15px;
+
+ transition: all 0.2s;
+}
+
+
+.missing-card .missing-dettagli:hover
+{
+ background-color: var(--secondary-hover-color);
+ cursor: pointer;
+}
+
+
+.missing-back .missing-pos,
+.missing-back .missing-num,
+.missing-back .missing-data
+{
+ margin-top: 3px;
+ margin-bottom: 3px;
+}
+
+
+
+
+/*=== MAPPA ===*/
+
+.map-wrapper
+{
+ height: 100%;   
+ padding: 15px 15px 0px 15px;
+ background-color: var(--main-color);
+}
+
+.map-wrapper .leaflet-container 
+{
+ height: 100%;
+ width: 100%;
+ border-radius: 15px;
+}
+
+
+
+
+/*=== SIDEBAR ===*/
+
+.sidebar 
+{
+ height: 100%;
+ width: 250px;
+ display: flex;
+ flex-direction: column;
+ gap: 30px;
+ padding: 15px;
+ background-color: var(--secondary-color);
+}
+
+
+.sidebar .title
+{
+ display: flex; 
+ flex-direction: row; 
+ align-items: center;
+ gap: 8px;
+}
+
+
+.title .logo
+{
+ width: 45px;
+ height: 45px;
+ object-fit: contain;   
+}
+
+
+.title .text
+{
+ margin: 0px; 
+ font-family: 'Roboto', sans-serif;  
+}
+
+
+.sidebar .menu 
+{
+ display: flex;
+ flex-direction: column;
+ gap: 5px;
+}
+
+
+.menu .item
+{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: start;
+ gap: 12px;
+ padding: 7px 7px;
+ border-radius: 10px;  
+ font-family: 'Roboto', sans-serif;
+}
+
+
+.menu .item:hover
+{
+ background-color: var(--primary-hover-color);
+ cursor: pointer;
+}
+
+
+.sidebar .profile
+{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ margin-top: auto;
+ gap: 15px;
+ border-radius: 10px;  
+}
+
+.sidebar .profile:hover
+{
+ background-color: var(--primary-hover-color);
+ cursor: pointer;
+}
+
+
+.profile .image
+{
+ width: 45px;
+ height: 45px;
+ margin-left: 3px;
+ object-fit: contain;   
+}
+
+
+.profile .user
+{
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ gap: 3px;
+ font-family: 'Roboto', sans-serif;
+}
+
+
+.profile .user p
+{
+ padding: 0px;
+ margin: 0px;
+}
+
+.user .name
+{
+ font-weight: 700;
+ font-size: 15px;
+}
+
+.user .action
+{
+ color: #424242;   
+ font-weight: 400;
+ font-size: 12px;
+}
+
+.profile .icon
+{
+ margin-left: auto;
+ margin-right: 10px;
+ width: 25px;
+ height: 25px;
+ object-fit: contain; 
+}
