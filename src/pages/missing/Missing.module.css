@@ -1,0 +1,24 @@
+.container
+{
+ height: 100%;
+ display: grid;  
+ grid-template-rows: 1fr 370px;
+ grid-template-areas: 
+ 'map' 
+ 'list';
+}
+
+
+.map 
+{
+ grid-area: map;
+ min-height: 0;
+}
+
+
+.list 
+{
+ grid-area: list;
+ min-height: 0;
+ overflow: hidden;
+}

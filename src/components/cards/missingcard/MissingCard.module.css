@@ -1,0 +1,105 @@
+.card 
+{
+ height: 340px;
+ width: 220px;
+ display: flex;
+ flex: 0 0 220px;
+ flex-direction: column;
+ padding: 10px;
+ background: white;
+ border-radius: 15px;
+ box-shadow: 0px 3px 10px -2px rgba(0,0,0,0.6);
+ transition: transform 0.35s ease;
+}
+
+
+.card:hover 
+{
+ transform: scale(1.02);
+}
+
+
+.front,
+.back 
+{
+ display: flex;
+ flex-direction: column;
+}
+
+
+.front .image
+{
+ width: 100%;
+ height: 150px;
+ max-height: 45%;
+ margin-bottom: 10px; 
+ object-fit: cover;
+ object-position: top;
+ border-radius: 6px;
+}
+
+
+.front .name 
+{
+ margin: 1px;
+ text-align: center;
+ font-family: Arial;
+}
+
+
+.front .type
+{
+ margin-top: 5px;
+ margin-bottom: 2px;
+}
+
+
+.front .age
+{
+ margin-top: 2px;
+ margin-bottom: 7px;
+}
+
+
+.front .desc
+{
+ margin-top: 2px;
+ margin-bottom: 2px;
+ color: #424242;
+ font-size: 1rem;
+}
+
+
+.card .details
+{
+ width: 150px;
+ height: 33px;
+
+ margin-top: 12px;
+ align-self: center;
+ text-align: center;
+
+ color: rgb(255, 98, 0);
+ font-weight: bold;
+ background-color:  rgb(254, 182, 115, 0.2);
+ border: 2px solid rgb(255, 98, 0);
+ border-radius: 15px;
+
+ transition: all 0.2s;
+}
+
+
+.card .details:hover
+{
+ background-color: var(--secondary-hover-color);
+ cursor: pointer;
+}
+
+
+.back .position,
+.back .number,
+.back .date
+{
+ margin-top: 3px;
+ margin-bottom: 3px;
+}

@@ -1,0 +1,17 @@
+.list
+{
+ height: 100%;
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ overflow-y: auto;
+ gap: 12px;
+ padding: 15px;
+ background-color: var(--main-color);
+}
+
+
+.list::-webkit-scrollbar 
+{
+ display: none;
+}

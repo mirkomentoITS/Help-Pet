@@ -1,0 +1,31 @@
+.container
+{
+ height: 100%;
+ display: grid;  
+ grid-template-rows: min-content 1fr;
+ grid-template-areas: 
+ 'place' 
+ 'list';
+}
+
+
+.place 
+{
+ grid-area: place;
+ min-height: 0;
+}
+
+
+.list 
+{
+ grid-area: list;
+ min-height: 0;
+ overflow: hidden;
+}
+
+
+.wrapper
+{
+ background-color: var(--main-color);
+ padding: 15px;
+}

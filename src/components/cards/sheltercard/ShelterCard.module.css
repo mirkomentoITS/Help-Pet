@@ -1,0 +1,105 @@
+.card 
+{
+ height: 200px;
+ width: 580px;
+ flex: 0 0 580px;
+
+ display: grid;
+ grid-template-columns: 200px 150px 180px;
+ grid-template-rows: 1fr 40px 40px;
+ grid-template-areas:  
+ 'photo id distance'
+ 'photo name address'
+ 'photo city num';
+ 
+ gap: 4px 10px;
+ padding: 10px;
+
+ background: white;
+ border-radius: 15px;
+ box-shadow: 0px 3px 10px -2px rgba(0,0,0,0.6);
+ transition: transform 0.35s ease;
+}
+
+
+.card:hover 
+{
+ transform: scale(1.02);
+}
+
+
+.link 
+{
+ color: inherit;
+ text-decoration: none;
+}
+
+
+.image
+{
+ width: 200px;
+ height: 100%;
+ grid-area: photo;
+ object-fit: cover;
+ border-radius: 6px;
+}
+
+
+.id 
+{
+ grid-area: id;
+ padding-left: 5px;
+ font-size: 22px;
+ font-weight: 600;
+ font-family: 'Roboto', sans-serif;
+}
+
+
+.distance 
+{ 
+ width: 100px;
+ height: 35px;
+ grid-area: distance;
+ justify-self: end;
+ text-align: center;
+ line-height: 30px;
+ font-weight: bold;
+ font-family: 'Roboto', sans-serif;
+ background-color:  rgba(250, 213, 6, 0.5);
+ border: 3px solid black;
+ border-radius: 15px;
+}
+
+
+.name
+{
+ grid-area: name;
+ margin: 0px;
+ padding-left: 5px;
+ font-size: 20px;
+}
+
+
+.city     
+{ 
+ grid-area: city;
+ margin: 0px; 
+ padding-left: 5px;
+ font-size: 20px;
+}
+
+
+.address  
+{ 
+ grid-area: address;
+ margin: 0px;
+ font-size: 20px;
+}
+
+
+.number      
+{ 
+ grid-area: num;
+ margin: 0px;
+ font-size: 20px;
+}

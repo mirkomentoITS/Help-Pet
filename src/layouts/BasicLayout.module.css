@@ -1,0 +1,22 @@
+.layout 
+{
+ height: calc(100vh - 10px);
+ display: grid;
+ grid-template-columns: min-content 1fr;
+ grid-template-areas: 'bar content';
+}
+
+
+.bar 
+{
+ grid-area: bar;
+ min-height: 0;
+}
+
+
+.content 
+{
+ height: 100%;
+ grid-area: content;
+ min-height: 0;
+}

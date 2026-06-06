@@ -1,0 +1,16 @@
+.container
+{
+ height: 100%;
+ display: grid;  
+ grid-template-rows: 1fr;
+ grid-template-areas:  
+ 'list';
+}
+
+
+.list 
+{
+ grid-area: list;
+ min-height: 0;
+ overflow: hidden;
+}
