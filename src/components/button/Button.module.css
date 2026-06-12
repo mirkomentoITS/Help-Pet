@@ -1,0 +1,13 @@
+.btn--miss
+{
+ position: absolute;
+ top: 35px;
+ right: 40px;
+ z-index: 1000;
+ padding: 10px 25px;
+ background-color: rgb(225, 119, 43);
+ border: 2px solid black;
+ border-radius: 25px;
+ font-size: 20px;
+ font-weight: bold;
+}

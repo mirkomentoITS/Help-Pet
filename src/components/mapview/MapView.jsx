@@ -3,7 +3,7 @@ import 'leaflet/dist/leaflet.css'
 import styles from '../mapview/MapView.module.css'
 
 
-export default function MapView({ pos }) {
+function MapView({ pos }) {
 
   return (
     <div className={styles.wrapper}>
@@ -27,3 +27,5 @@ export default function MapView({ pos }) {
     </div>
   );
 }
+
+export default MapView

@@ -1,17 +1,26 @@
-import { useRef } from 'react'
+import { useState, useRef } from 'react'
 import styles from './AnimalForm.module.css'
 
 
-function AnimalForm () {
+function AnimalForm({ onClose }) {
 
+  const [showMess, setShowMess] = useState(false)
   const formRef = useRef(null)
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const data = new FormData(formRef.current)
-    const result = Object.fromEntries(data)
+    const rawData = new FormData(formRef.current)
+    const data = Object.fromEntries(rawData)
+    
+    fetch('api/missings', {
+      method: "POST",
+      headers: {"Content-Type": "application/JSON"},
+      body: JSON.stringify(data)
+    })
+     .then((response) => response.json())
+     .then(() => setShowMess(true))
 
-    console.log(result);
+     setTimeout(onClose, 3000);
   }
 
   return ( 
@@ -60,7 +69,7 @@ function AnimalForm () {
              <label htmlFor='desc'>Description</label>
              <textarea
                id='desc'
-               name='description'
+               name='desc'
                rows='2'
                cols='70'
                required
@@ -74,7 +83,7 @@ function AnimalForm () {
             <input
               type="text"
               id="pos"
-              name='position'
+              name='lastPos'
               required
               minLength={10}/>
           </div> 
@@ -83,7 +92,7 @@ function AnimalForm () {
             <input
               type="number"
               id="lat"
-              name='latitude'
+              name='lat'
               min={-90}
               max={90}
               step="any"/>
@@ -93,7 +102,7 @@ function AnimalForm () {
             <input
               type="number"
               id="lng"
-              name='longitude'
+              name='lng'
               min={-180}
               max={180}
               step="any"/>
@@ -112,10 +121,11 @@ function AnimalForm () {
             <input
               type="date"
               id="date"
-              name='date'
+              name='reportDate'
               required/>
-          </div>
+          </div>                                                
         </div>
+        {showMess && <div id={styles.message}>✅ Report Sended</div>}
         <button id={styles.button} type="submit">SEND</button>
       </form>
   </div>

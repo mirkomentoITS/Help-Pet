@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react'
 import MapView from '../../components/mapview/MapView'
 import MissingList from '../../components/lists/missinglist/MissingList'
+import Button from '../../components/button/Button'
+import AnimalForm from '../../components/animalform/AnimalForm'
 import styles from './Missing.module.css'
 
 
 function Missing() {
 
   const [missingData, setMissingData] = useState([])
+  const [toggle, setToggle] = useState(false)
 
   useEffect(() => {
     fetch('api/missings')
@@ -15,13 +18,15 @@ function Missing() {
   }, [])
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container}>                                               
       <div className={styles.map}> 
         <MapView pos={missingData}/> 
       </div>
-      <div className={styles.list}>
+      <div className={styles.list}>                                                                    
         <MissingList list={missingData}/>
-      </div>
+      </div>   
+      <Button title='AGGIUNGI' classes='miss' handleClick={() => setToggle(prev => !prev)}/>
+      {toggle && <AnimalForm onClose={() => setToggle(false)} />}
     </section>
   ); 
 }
