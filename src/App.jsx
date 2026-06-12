@@ -6,6 +6,8 @@ import Shelter from './pages/shelter/Shelter'
 import Animal from './pages/animal/Animal'
 import NotFound from './pages/notfound/NotFound'
 
+import AnimalForm from './components/animalform/AnimalForm'
+
 
 const router = createBrowserRouter([
   {
@@ -35,7 +37,7 @@ const router = createBrowserRouter([
 function App() {
 
   return ( 
-    <RouterProvider router={router} />
+    <RouterProvider router={router} />   
   ); 
 }
 

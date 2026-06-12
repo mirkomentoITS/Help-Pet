@@ -5,3 +5,8 @@
 --primary-hover-color: rgb(240, 175, 114);
 --secondary-hover-color: rgb(254, 182, 115, 0.7);
 }
+
+body
+{
+ background-color: var(--main-color);
+}
