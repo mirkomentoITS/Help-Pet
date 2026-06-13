@@ -15,13 +15,13 @@
  width: 800px;
  height: 100%;
  display: grid;
- grid-template-columns: 1fr 1fr;
+ grid-template-columns: 1fr 450px;
  grid-template-rows: 2fr 1fr 1fr;
  grid-template-areas:  
  'image code'
  'image message'
  'image link';
- gap: 0px 0px;
+ gap: 0px 30px;
 }
 
 
@@ -42,7 +42,7 @@
  align-self: center;
  font-family: 'Roboto', sans-serif;
  color: white;
- font-size: 80px;
+ font-size: 90px;
  font-weight: 900;
 }
 
@@ -52,7 +52,7 @@
  grid-area: message;
  margin: 0;
  align-self: start;
- font-size: 18px;
+ font-size: 22px;
  font-family: 'Roboto', sans-serif;
  color: white;
  font-weight: bold;
@@ -67,6 +67,7 @@
  align-self: start;
  color: white;
  text-decoration: none;
+ font-size: 20px;
  font-weight: 600;
  background-color: rgb(255, 98, 0);
  border: 1px solid black;
