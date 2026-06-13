@@ -4,13 +4,24 @@ import styles from './AnimalForm.module.css'
 
 function AnimalForm({ onClose }) {
 
-  const [showMess, setShowMess] = useState(false)
   const formRef = useRef(null)
+  const [showMess, setShowMess] = useState(false)
 
-  const handleSubmit = (e) => {
+  const fileToBase64 = (file) => {
+    return new Promise((resolve) => {
+      const reader = new FileReader()
+      reader.onload = () => resolve(reader.result)
+      reader.readAsDataURL(file)
+    })
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const rawData = new FormData(formRef.current)
     const data = Object.fromEntries(rawData)
+
+    const file = rawData.get('image')
+    data.image = await fileToBase64(file)
     
     fetch('api/missings', {
       method: "POST",
