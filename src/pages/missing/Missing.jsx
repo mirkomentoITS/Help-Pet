@@ -12,9 +12,10 @@ function Missing() {
   const [toggle, setToggle] = useState(false)
 
   useEffect(() => {
-    fetch('api/missings')
+    fetch('/api/missings')
       .then((response) => response.json())
       .then((data) => setMissingData(data))
+      .catch(() => alert('Errore nel caricamento dei dati'))
   }, [])
 
   return (

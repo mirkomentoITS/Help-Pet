@@ -9,19 +9,19 @@ import NotFound from './pages/notfound/NotFound'
 
 const router = createBrowserRouter([
   {
-   path: '/',  element: <BasicLayout />,
+   path: '/',  element: <BasicLayout/>,
    children: [
      {
       index: true,
-      element: <Missing />
+      element: <Missing/>
      },
      {
       path: '/shelter',
-      element: <Shelter />
+      element: <Shelter/>
      },
      {
       path: '/shelter/:id',
-      element: <Animal />
+      element: <Animal/>
      }
    ]
   },

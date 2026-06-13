@@ -30,6 +30,7 @@ function AnimalForm({ onClose }) {
     })
      .then((response) => response.json())
      .then(() => setShowMess(true))
+     .catch(() => alert('Errore! Riprova'))
 
      setTimeout(onClose, 3000);
   }

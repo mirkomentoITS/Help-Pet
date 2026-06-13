@@ -16,12 +16,14 @@ function Animal() {
     fetch(`/api/shelters/${id}`)
       .then((response) => response.json())
       .then((data) => setShelter(data))
+      .catch(() => alert('Errore rifugio non trovato'))
   }, [id])
 
   useEffect(() => {
     fetch(`/api/animals?shelter=${id}`)
       .then((response) => response.json())
       .then((data) => setAnimalData(data))
+      .catch(() => alert('Errore nel caricamento dati'))
   }, [id])
 
 

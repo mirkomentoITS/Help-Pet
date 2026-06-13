@@ -13,12 +13,14 @@ function Shelter() {
     fetch('/api/shelters')
       .then((response) => response.json())
       .then((data) => setShelterData(data))
+      .catch(() => alert('Errore nel caricamento dati'))
   }, [])
 
   const filterShelter = (query = '') => {
     fetch(`/api/shelters${query}`)
       .then(r => r.json())
-    .then(data => setShelterData(data))
+      .then(data => setShelterData(data))
+      .catch(() => alert('Errore filtro'))
   }
 
   return (
