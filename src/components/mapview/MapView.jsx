@@ -20,7 +20,7 @@ function MapView({ pos }) {
 
         {pos.map((animal) => (    
           <Marker key={animal.name} position={[animal.lat, animal.lng]}>
-            <Popup>{animal.nome}</Popup>
+            <Popup>{animal.name}</Popup>
           </Marker>
         ))}
       </MapContainer>

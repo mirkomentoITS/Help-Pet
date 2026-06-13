@@ -25,7 +25,7 @@ function Missing() {
       <div className={styles.list}>                                                                    
         <MissingList list={missingData}/>
       </div>   
-      <Button title='AGGIUNGI' classes='miss' handleClick={() => setToggle(prev => !prev)}/>
+      <Button title='AGGIUNGI' variant='btn-miss' handleClick={() => setToggle(prev => !prev)}/>
       {toggle && <AnimalForm onClose={() => setToggle(false)} />}
     </section>
   ); 

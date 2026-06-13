@@ -1,13 +1,33 @@
-.btn--miss
+.btn
+{
+ background-color: rgb(239, 137, 64);
+ font-size: 22px;
+ font-weight: bold;
+ border: 2px solid black;
+ border-radius: 25px;
+}
+
+
+
+.btn-miss
 {
  position: absolute;
  top: 35px;
  right: 40px;
  z-index: 1000;
  padding: 10px 25px;
- background-color: rgb(225, 119, 43);
- border: 2px solid black;
- border-radius: 25px;
- font-size: 20px;
- font-weight: bold;
+}
+
+
+
+.btn-filter
+{
+ height: 50px;
+ width: 150px;
+ margin: 20px 15px;
+}
+
+.filter-active
+{
+ background-color:  rgb(202, 85, 30);
 }

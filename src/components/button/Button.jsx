@@ -1,10 +1,14 @@
 import styles from './Button.module.css'
 
 
-function Button({ title, classes, handleClick }) {
+function Button({ title, variant, active, handleClick }) {
 
   return (
-    <button onClick={handleClick} className={styles[`btn--${classes}`]}>
+    <button onClick={handleClick}
+      className= {`
+         ${styles['btn']}
+         ${variant ? styles[variant] : ''}
+         ${active ? styles['filter-active'] : ''}`}>
       {title}
     </button>
   )
