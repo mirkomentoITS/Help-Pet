@@ -1,16 +1,17 @@
 .card 
 {
  height: 200px;
- width: 580px;
+ width: 520px;
  flex: 0 0 580px;
 
  display: grid;
- grid-template-columns: 200px 150px 180px;
- grid-template-rows: 1fr 40px 40px;
+ grid-template-columns: 200px 180px min-content;
+ grid-template-rows: 1fr repeat(3, min-content);
  grid-template-areas:  
- 'photo id distance'
- 'photo name address'
- 'photo city num';
+ 'photo name distance'
+ 'photo city distance'
+ 'photo address distance'
+ 'photo num distance';
  
  gap: 4px 10px;
  padding: 10px;
@@ -45,9 +46,9 @@
 }
 
 
-.id 
+.name 
 {
- grid-area: id;
+ grid-area: name;
  padding-left: 5px;
  font-size: 22px;
  font-weight: 600;
@@ -68,15 +69,6 @@
  background-color:  rgba(250, 213, 6, 0.5);
  border: 3px solid black;
  border-radius: 15px;
-}
-
-
-.name
-{
- grid-area: name;
- margin: 0px;
- padding-left: 5px;
- font-size: 20px;
 }
 
 

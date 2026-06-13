@@ -15,20 +15,16 @@ function ShelterCard ({ shelter }) {
         src={shelter.image} alt='foto luogo'
       />
 
-      <h3 className={styles.id}>
-        {shelter.id.toUpperCase()}
-      </h3>
-
       <p className={styles.distance}>
         KM {shelter.distance}
       </p>
 
-      <p className={styles.name}>
+      <h3 className={styles.name}>
         {shelter.name}
-      </p>
+      </h3>
 
       <p className={styles.city}>
-        {shelter.city}
+        🌆 {shelter.city}
       </p>
 
       <p className={styles.address}>
