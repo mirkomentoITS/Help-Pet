@@ -18,6 +18,10 @@ function Missing() {
       .catch(() => alert('Errore nel caricamento dei dati'))
   }, [])
 
+  const handleAnimalAdded = (newAnimal) => {
+    setMissingData([...missingData, newAnimal])
+  }
+
   return (
     <section className={styles.container}>                                               
       <div className={styles.map}> 
@@ -27,7 +31,7 @@ function Missing() {
         <MissingList list={missingData}/>
       </div>   
       <Button title='AGGIUNGI' variant='btn-miss' handleClick={() => setToggle(prev => !prev)}/>
-      {toggle && <AnimalForm onClose={() => setToggle(false)} />}
+      {toggle && <AnimalForm onClose={() => setToggle(false)} onSuccess={handleAnimalAdded} />}
     </section>
   ); 
 }
