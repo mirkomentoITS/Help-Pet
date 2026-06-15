@@ -2,7 +2,7 @@ import { useState, useRef } from 'react'
 import styles from './AnimalForm.module.css'
 
 
-function AnimalForm({ onClose }) {
+function AnimalForm({ onSuccess, onClose }) {
 
   const formRef = useRef(null)
   const [showMess, setShowMess] = useState(false)
@@ -29,7 +29,7 @@ function AnimalForm({ onClose }) {
       body: JSON.stringify(data)
     })
      .then((response) => response.json())
-     .then(() => setShowMess(true))
+     .then((newAnimal) => onSuccess(newAnimal), setShowMess(true))
      .catch(() => alert('Errore! Riprova'))
 
      setTimeout(onClose, 3000);
