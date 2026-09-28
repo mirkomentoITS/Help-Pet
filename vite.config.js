@@ -7,7 +7,7 @@ export default defineConfig({
    server: {
     proxy: {
       '/api': {
-        target: 'https://help-pet.up.railway.app',
+        target: 'https://api-help-pet.onrender.com',
         changeOrigin: true,
       },
     },
