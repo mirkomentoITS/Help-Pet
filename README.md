@@ -1,6 +1,7 @@
 # 🐾 Help-Pet
 
-> Una piattaforma moderna per la segnalazione di animali smarriti, la ricerca di rifugi vicini e il supporto alle strutture di accoglienza.
+> Una piattaforma  per la cura e la salvaguardia degli animali: segnalazione degli animali smarriti, ricerca di rifugi vicini, 
+gestione adozioni e supporto alle strutture di accoglienza.
 
 [![React](https://img.shields.io/badge/React-19.2.5-blue?style=flat-square&logo=react)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-8.0-purple?style=flat-square&logo=vite)](https://vitejs.dev)
@@ -16,7 +17,7 @@
 - 🗺️ **Visualizzare animali smarriti** su una mappa interattiva con pin color-coded
 - 🔍 **Cercare rifugi** nelle vicinanze e filtrarli per tipo di servizio (adozione, affido)
 - 📝 **Segnalare animali smarriti** tramite form intuitivo con upload foto
-- 🏠 **Consultare dettagli** di ogni rifugio e gli animali disponibili
+- 🏠 **Consultare dettagli** di ogni rifugio e degli animali disponibili per le adozioni
 
 ---
 
@@ -48,13 +49,12 @@
 ## 🛠️ Tech Stack
 
 **Frontend:**
-- React 19.2.5 - UI library
+- React 19.2.5 - JS library
 - Vite 8.0 - Build tool
 - React Router v6 - Client-side routing
 - Leaflet 1.9 - Interactive maps
-- React-Leaflet 5.0 - React binding for Leaflet
-- Lucide React 1.16 - Icon library
 - CSS Modules - Scoped styling
+- Lucide React 1.16 - Icon library
 
 **Backend:**
 - Express.js - REST API
@@ -186,7 +186,7 @@ src/
 - Implementare grafici (usare libreria REcharts)
 
 - Creare Pagina "Help Us" (volontariato, donazioni)
-- Sistemare UI generale
+- Sistemare UX UI 
 - Sistemare responsive layout
 
 - Possibile supporto multilingua
